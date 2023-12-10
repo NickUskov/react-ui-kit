@@ -36,9 +36,6 @@ export const Button: FC<ButtonProps> = ({
     } else return <></>;
   };
 
-
-  console.log("123")
-
   return (
     <button
       className={btnClass}
