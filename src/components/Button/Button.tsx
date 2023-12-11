@@ -1,14 +1,13 @@
-import React, { FC } from "react";
+import React, { type FC } from 'react'
 
-import "./styles.css"
+import './styles.css'
 
-export type ButtonProps = {
-    content: React.ReactNode;
+export interface ButtonProps {
+  content: React.ReactNode
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-    
-    return (
-        <button className="my-button">{props.content}</button>
-    )
+  return (
+    <button className="my-button">{props.content}</button>
+  )
 }

@@ -1,50 +1,50 @@
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
-import postcss from "rollup-plugin-postcss"
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import typescript from '@rollup/plugin-typescript'
+import dts from 'rollup-plugin-dts'
+import postcss from 'rollup-plugin-postcss'
 import terser from '@rollup/plugin-terser'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import autoprefixer from "autoprefixer";
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import autoprefixer from 'autoprefixer'
 
-import { readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs'
 
 const packageJson = JSON.parse(
-	readFileSync(new URL('./package.json', import.meta.url))
-);
+  readFileSync(new URL('./package.json', import.meta.url))
+)
 
 export default [
   {
-    input: "src/index.ts",
+    input: 'src/index.ts',
     output: [
       {
         file: packageJson.main,
-        format: "cjs",
-        sourcemap: true,
+        format: 'cjs',
+        sourcemap: true
       },
       {
         file: packageJson.module,
-        format: "esm",
-        sourcemap: true,
-      },
+        format: 'esm',
+        sourcemap: true
+      }
     ],
     plugins: [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ tsconfig: './tsconfig.json' }),
       postcss({
         autoModules: true,
         extract: false,
         plugins: [autoprefixer]
       }),
-      terser(),
-    ],
+      terser()
+    ]
   },
   {
-    input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    input: 'dist/esm/types/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.css$/],
-  },
-];
+    external: [/\.css$/]
+  }
+]
