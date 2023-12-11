@@ -34,6 +34,8 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
+        autoModules: true,
+        extract: false,
         plugins: [autoprefixer]
       }),
       terser(),

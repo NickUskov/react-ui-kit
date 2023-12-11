@@ -7,6 +7,44 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    {
+      name: '@storybook/addon-styling-webpack',
+      options: {
+        rules: [
+          // Replaces any existing Sass rules with given rules
+          {
+            test: /\.css$/i,
+            use: [
+              {
+                loader: "style-loader"
+              },
+              {
+                loader: "css-loader"
+              }
+            ]
+          },
+          {
+            test: /\.scss$/i,
+            use: [
+              {loader: "style-loader"},
+              {
+                loader: "css-loader",
+                options: {
+                  importLoaders: 1,
+                  modules: {
+                    mode: "local",
+                  },
+                },
+              },
+              {
+                loader: "sass-loader",
+                options: { implementation: require.resolve("node-sass") }
+              },
+            ],
+          },
+        ]
+      }
+    }
   ],
   framework: {
     name: "@storybook/react-webpack5",
