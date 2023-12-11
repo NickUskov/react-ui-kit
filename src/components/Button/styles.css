@@ -1,7 +1,5 @@
-/* .my-button {
-    background-color: tomato;
-    color: white;
-} */
+@import "../rootStyles.css";
+
 .my-button,
 .main,
 .secondary,
@@ -10,45 +8,45 @@
 .small,
 .disabled,
 .enable {
-  /* Кнопка с фоном */
-  background-color: #244940;
+  background-color: var(--base-color);
   font-weight: 300;
-  color: white;
+  color: var(--w-color);
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
   cursor: pointer;
-  transition: background-color 0.7s;
+  transition: 0.2s ease-in-out;
+
   &:hover {
-    background-color: #265b4d;
+    filter: brightness(120%);
   }
+
   &:active {
     transition: background-color 0.2s;
-    background-color: #0b2821;
+    filter: brightness(70%);
   }
 
-  /* Прозрачная кнопка */
   &.secondary {
-    background-color: rgba(255, 255, 255, 0);
-    color: #244940;
-    border: 2px solid #244940;
-    transition: color 0.8s, border-color 0.6s;
+    background-color: white;
+    color: var(--base-color);
+
     &:hover {
-      background-color: rgba(255, 255, 255, 0);
-      color: #0961499e !important;
-      border: 2px solid #0961499e !important;
+      transition: background-color 0.2s;
+      background-color: var(--base-color);
+      color: white;
     }
+
     &:active {
-      transition: color 0.2s, border-color 0.2s;
-      background-color: rgba(255, 255, 255, 0);
-      color: #0b2821 !important;
-      border: 2px solid #0b2821 !important;
+      transition: background-color 0.2s, border-color 0.2s;
+      background-color: var(--base-color);
+      color: white;
+      border: 2px solid white;
+      filter: brightness(70%);
     }
   }
 
-  /* размеры */
   &.large {
     font-size: 24px;
     height: 57.543px;
@@ -65,17 +63,9 @@
     padding: 6px 14px;
   }
 
-  /* активность */
   &.disabled {
     cursor: no-drop;
-    color: #afafaf;
-    background-color: #56726c;
-
-    &.secondary {
-      background-color: rgba(255, 255, 255, 0);
-      color: #67706d97 !important;
-      border: 2px solid #67706d97 !important;
-    }
+    filter: opacity(40%);
   }
 
   &.main {

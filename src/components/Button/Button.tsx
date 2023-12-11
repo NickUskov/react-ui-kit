@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import classNames from "classnames";
 import { ButtonIcons } from "./Icons";
 import "./styles.css";
 
 export type ButtonProps = {
-  backgroundColor?: string;
-  content: React.ReactNode;
+  color?: string;
+  content: string;
   icon?: "add" | "remove" | "edit" | "copy" | "settings" | "like";
   type?: "main" | "secondary";
   size?: "large" | "medium" | "small";
@@ -14,7 +14,7 @@ export type ButtonProps = {
 };
 
 export const Button: FC<ButtonProps> = ({
-  backgroundColor,
+  color,
   content,
   icon,
   type,
@@ -22,12 +22,15 @@ export const Button: FC<ButtonProps> = ({
   disabled,
   onClick,
 }) => {
-  const btnClass = classNames(
+  const elemStyle = {
+    "--base-color": color,
+  } as React.CSSProperties;
+
+  let btnClass = classNames(
     "my-button",
-    backgroundColor ? `color-${backgroundColor.replace("#", "")}` : "",
     type,
     size,
-    { disabled }
+    disabled ? "disabled" : null
   );
 
   const btnIcon = () => {
@@ -37,11 +40,7 @@ export const Button: FC<ButtonProps> = ({
   };
 
   return (
-    <button
-      className={btnClass}
-      onClick={onClick}
-      style={{ backgroundColor: backgroundColor }}
-    >
+    <button className={btnClass} onClick={onClick} style={elemStyle}>
       {btnIcon()}
       {content}
     </button>
