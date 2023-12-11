@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import { ButtonIcons } from "./Icons";
 import "./styles.css";
@@ -6,7 +6,7 @@ import "./styles.css";
 export type ButtonProps = {
   color?: string;
   content: string;
-  icon?: "add" | "remove" | "edit" | "copy" | "settings" | "like";
+  icon?: "none" | "add" | "remove" | "edit" | "copy" | "settings" | "like";
   type?: "main" | "secondary";
   size?: "large" | "medium" | "small";
   disabled?: boolean;
