@@ -1,20 +1,21 @@
-import React, { FC } from "react";
-import classNames from "classnames";
-import { ButtonIcons } from "./Icons";
-import "./buttonStyles.css";
+// Disable @typescript-eslint
+import React, { type FC } from 'react'
+import classNames from 'classnames'
+import { ButtonIcons } from './Icons'
+import './buttonStyles.css'
 
-export type ButtonProps = {
-  color?: string;
-  content: string;
-  icon?: "none" | "add" | "remove" | "edit" | "copy" | "settings" | "like";
-  type?: "main" | "secondary" | "onlyText";
-  size?: "large" | "medium" | "small";
-  radius?: number;
-  glow?: boolean;
-  shadow?: boolean;
-  disabled?: boolean;
-  onClick?: () => void;
-};
+export interface ButtonProps {
+  color?: string
+  content: string
+  icon?: 'none' | 'add' | 'remove' | 'edit' | 'copy' | 'settings' | 'like'
+  type?: 'main' | 'secondary' | 'onlyText'
+  size?: 'large' | 'medium' | 'small'
+  radius?: number
+  glow?: boolean
+  shadow?: boolean
+  disabled?: boolean
+  onClick?: () => void
+}
 
 export const Button: FC<ButtonProps> = ({
   color,
@@ -26,21 +27,29 @@ export const Button: FC<ButtonProps> = ({
   glow,
   shadow,
   disabled,
-  onClick,
+  onClick
 }) => {
+  /* eslint-disable */
   const elemStyle = {
     "--base-color": color,
     "--radius": `${radius}px`,
   } as React.CSSProperties;
+  /* eslint-disable */
 
-  let btnClass = classNames(
+  const btnClass = classNames([
     "my-button",
-    type,
-    size,
-    disabled ? "disabled" : null,
-    glow ? "glow" : null,
-    shadow ? "shadow" : null
-  );
+    {
+      main: type === "main",
+      secondary: type === "secondary",
+      onlyText: type === "onlyText",
+      large: size === "large",
+      medium: size === "medium",
+      small: size === "small",
+      disabled,
+      glow,
+      shadow,
+    },
+  ]);
 
   const btnIcon = () => {
     if (icon) {

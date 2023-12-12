@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react'
 
-export type ButtonSvgIcons = {
-  nameSvg: string;
-  svg: (size: string | undefined) => React.JSX.Element;
-};
+export interface ButtonSvgIcons {
+  nameSvg: string
+  svg: (size: string | undefined) => React.JSX.Element
+}
 
 const addSvg: (size: string | undefined) => React.JSX.Element = (
   size: string | undefined
 ) => (
   <svg
-    width={size === "large" ? "40" : size === "medium" ? "28" : "24"}
-    height={size === "large" ? "40" : size === "medium" ? "28" : "24"}
+    width={size === 'large' ? '40' : size === 'medium' ? '28' : '24'}
+    height={size === 'large' ? '40' : size === 'medium' ? '28' : '24'}
     viewBox="0 0 35 35"
   >
     <g>
@@ -18,28 +18,28 @@ const addSvg: (size: string | undefined) => React.JSX.Element = (
         fill="none"
         points="649,137.999 675,137.999 675,155.999 661,155.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="653,155.999 649,155.999 649,141.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="661,156 653,162 653,156  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
     </g>
     <g>
@@ -61,14 +61,14 @@ const addSvg: (size: string | undefined) => React.JSX.Element = (
       />
     </g>
   </svg>
-);
+)
 
 const removeSvg: (size: string | undefined) => React.JSX.Element = (
   size: string | undefined
 ) => (
   <svg
-    width={size === "large" ? "24" : size === "medium" ? "20" : "14"}
-    height={size === "large" ? "24" : size === "medium" ? "20" : "14"}
+    width={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
+    height={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
     viewBox="0 0 34 34"
   >
     <g>
@@ -76,28 +76,28 @@ const removeSvg: (size: string | undefined) => React.JSX.Element = (
         fill="none"
         points="   649,137.999 675,137.999 675,155.999 661,155.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="   653,155.999 649,155.999 649,141.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="   661,156 653,162 653,156  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
     </g>
     <g>
@@ -111,14 +111,14 @@ const removeSvg: (size: string | undefined) => React.JSX.Element = (
       />
     </g>
   </svg>
-);
+)
 
 const editSvg: (size: string | undefined) => React.JSX.Element = (
   size: string | undefined
 ) => (
   <svg
-    width={size === "large" ? "24" : size === "medium" ? "20" : "14"}
-    height={size === "large" ? "24" : size === "medium" ? "20" : "14"}
+    width={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
+    height={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
     viewBox="0 0 34 34"
   >
     <g>
@@ -126,28 +126,28 @@ const editSvg: (size: string | undefined) => React.JSX.Element = (
         fill="currentColor"
         points="   649,137.999 675,137.999 675,155.999 661,155.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="currentColor"
         points="   653,155.999 649,155.999 649,141.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="currentColor"
         points="   661,156 653,162 653,156  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
     </g>
     <path
@@ -155,14 +155,14 @@ const editSvg: (size: string | undefined) => React.JSX.Element = (
       fill="currentColor"
     />
   </svg>
-);
+)
 
 const copySvg: (size: string | undefined) => React.JSX.Element = (
   size: string | undefined
 ) => (
   <svg
-    width={size === "large" ? "24" : size === "medium" ? "20" : "14"}
-    height={size === "large" ? "24" : size === "medium" ? "20" : "14"}
+    width={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
+    height={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
     viewBox="0 0 34 34"
   >
     <g>
@@ -170,28 +170,28 @@ const copySvg: (size: string | undefined) => React.JSX.Element = (
         fill="none"
         points="   649,137.999 675,137.999 675,155.999 661,155.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="   653,155.999 649,155.999 649,141.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="   661,156 653,162 653,156  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
     </g>
     <g>
@@ -209,14 +209,14 @@ const copySvg: (size: string | undefined) => React.JSX.Element = (
       </g>
     </g>
   </svg>
-);
+)
 
 const settingsSvg: (size: string | undefined) => React.JSX.Element = (
   size: string | undefined
 ) => (
   <svg
-    width={size === "large" ? "24" : size === "medium" ? "20" : "14"}
-    height={size === "large" ? "24" : size === "medium" ? "20" : "14"}
+    width={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
+    height={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
     viewBox="0 0 34 34"
   >
     <g>
@@ -230,14 +230,14 @@ const settingsSvg: (size: string | undefined) => React.JSX.Element = (
       />
     </g>
   </svg>
-);
+)
 
 const likeSvg: (size: string | undefined) => React.JSX.Element = (
   size: string | undefined
 ) => (
   <svg
-    width={size === "large" ? "24" : size === "medium" ? "20" : "14"}
-    height={size === "large" ? "24" : size === "medium" ? "20" : "14"}
+    width={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
+    height={size === 'large' ? '24' : size === 'medium' ? '20' : '14'}
     viewBox="0 0 34 34"
   >
     <g>
@@ -245,28 +245,28 @@ const likeSvg: (size: string | undefined) => React.JSX.Element = (
         fill="none"
         points="   649,137.999 675,137.999 675,155.999 661,155.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="   653,155.999 649,155.999 649,141.999  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         fill="none"
         points="   661,156 653,162 653,156  "
         stroke="#FFFFFF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
     </g>
     <g>
@@ -278,13 +278,13 @@ const likeSvg: (size: string | undefined) => React.JSX.Element = (
       </g>
     </g>
   </svg>
-);
+)
 
 export const ButtonIcons: ButtonSvgIcons[] = [
-  { nameSvg: "add", svg: addSvg },
-  { nameSvg: "remove", svg: removeSvg },
-  { nameSvg: "edit", svg: editSvg },
-  { nameSvg: "copy", svg: copySvg },
-  { nameSvg: "settings", svg: settingsSvg },
-  { nameSvg: "like", svg: likeSvg },
-];
+  { nameSvg: 'add', svg: addSvg },
+  { nameSvg: 'remove', svg: removeSvg },
+  { nameSvg: 'edit', svg: editSvg },
+  { nameSvg: 'copy', svg: copySvg },
+  { nameSvg: 'settings', svg: settingsSvg },
+  { nameSvg: 'like', svg: likeSvg }
+]
