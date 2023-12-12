@@ -1,8 +1,10 @@
 // Disable @typescript-eslint
 import React, { type FC } from 'react'
-import classNames from 'classnames'
+import cnBind from 'classnames/bind'
 import { ButtonIcons } from './Icons'
-import './buttonStyles.css'
+import btnStyles from './button.module.scss'
+
+const cx = cnBind.bind(btnStyles)
 
 export interface ButtonProps {
   color?: string
@@ -36,21 +38,19 @@ export const Button: FC<ButtonProps> = ({
   } as React.CSSProperties;
   /* eslint-disable */
 
-  const btnClass = classNames([
-    "my-button",
-    {
+  const btnClasses = cx(
+    'btn', {
       main: type === "main",
       secondary: type === "secondary",
       onlyText: type === "onlyText",
       large: size === "large",
       medium: size === "medium",
       small: size === "small",
-      disabled,
+      disabled: disabled,
       glow,
       shadow,
-    },
-  ]);
-
+  });
+ 
   const btnIcon = () => {
     if (icon) {
       return ButtonIcons.find((bIcon) => bIcon.nameSvg === icon)?.svg(size);
@@ -58,9 +58,9 @@ export const Button: FC<ButtonProps> = ({
   };
 
   return (
-    <button className={btnClass} onClick={onClick} style={elemStyle}>
-      {btnIcon()}
-      <p className="text">{content}</p>
-    </button>
+  <button className={btnClasses} onClick={onClick} style={elemStyle}>
+    {btnIcon()}
+    <p className={btnStyles.text}>{content}</p>
+  </button>    
   );
 };

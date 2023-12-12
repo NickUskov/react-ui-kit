@@ -1,6 +1,6 @@
 @import "../rootStyles.css";
 
-.my-button,
+.btn,
 .main,
 .secondary,
 .large,
@@ -20,6 +20,34 @@
   transition: 0.2s ease-in-out;
   border: 2px solid var(--base-color);
   border-radius: var(--radius);
+
+
+  &.large {
+    font-size: 24px;
+    height: 57.543px;
+    padding: 14px 54px;
+  }
+  &.medium {
+    font-size: 20px;
+    height: 40.381px;
+    padding: 8px 28px;
+  }
+  &.small {
+    font-size: 14px;
+    height: 29.276px;
+    padding: 6px 14px;
+  }
+
+  &.disabled {
+    cursor: no-drop;
+    filter: opacity(40%);
+  }
+
+  &.main {
+    font-weight: 700;
+  }
+
+
 
   &:hover {
     filter: brightness(120%);
@@ -135,30 +163,5 @@
         }
       }
     }
-  }
-
-  &.large {
-    font-size: 24px;
-    height: 57.543px;
-    padding: 14px 54px;
-  }
-  &.medium {
-    font-size: 20px;
-    height: 40.381px;
-    padding: 8px 28px;
-  }
-  &.small {
-    font-size: 14px;
-    height: 29.276px;
-    padding: 6px 14px;
-  }
-
-  &.disabled {
-    cursor: no-drop;
-    filter: opacity(40%);
-  }
-
-  &.main {
-    font-weight: 700;
   }
 }
