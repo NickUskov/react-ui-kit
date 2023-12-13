@@ -1,5 +1,6 @@
 :root {
   --base-color: #23483f;
+  --light-base-color: #23483f88;
 
   --w-color: white;
 
@@ -8,4 +9,5 @@
   --radius: 0px;
 
   --box-shadow: 10px 5px 5px var(--base-color);
+
 }
