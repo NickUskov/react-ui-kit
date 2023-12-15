@@ -1,4 +1,3 @@
-// Disable @typescript-eslint
 import React, { type FC } from 'react'
 import cnBind from 'classnames/bind'
 import { ButtonIcons } from './Icons'
@@ -23,8 +22,8 @@ export const Button: FC<ButtonProps> = ({
   color,
   content,
   icon,
-  type,
-  size,
+  type = 'main',
+  size = 'medium',
   radius,
   glow,
   shadow,
@@ -54,7 +53,7 @@ export const Button: FC<ButtonProps> = ({
   const btnIcon = () => {
     if (icon) {
       return ButtonIcons.find((bIcon) => bIcon.nameSvg === icon)?.svg(size);
-    } else return <></>;
+    } else return null;
   };
 
   return (
