@@ -1,6 +1,8 @@
 :root {
   --base-color: #23483f;
   --light-base-color: #23483f88;
+  --background-color: white;
+  --font-size: 18px;
 
   --w-color: white;
 
@@ -8,6 +10,28 @@
 
   --radius: 0px;
 
-  --box-shadow: 10px 5px 5px var(--base-color);
+  --box-shadow: 0 2px 5px var(--base-color);
+  --border-color: rgb(0, 10, 144);
+  --border-width: 1px;
 
+  --text-align: left;
+
+  --text-color: black;
+  --input-width: 100px;
+  --input-height: 30px;
+  --glow-color: #0033ff;
+  --box-shadow-color: black;
+
+  --icon-color: black;
+  --title-color: black;
+  --btn-title-color: black;
+  --btn-description-color: black;
+  --scrollable: hidden;
+  --background-text-color: white;
+  --accordion-width: auto;
+  --accordion-height: auto;
+  --max-height-content: 400px;
+  --background-title-color: white;
+  --border-style: 1px solid var(--base-color);
+  --content-color: white;
 }
