@@ -1,0 +1,116 @@
+@import "../rootStyles.css";
+
+.accordion{
+  width: var(--accordion-width);
+  height: var(--accordion-height);
+  padding: 5px;
+  border: var(--border-style);
+  border-radius: 10px;
+  background-color: var(--background-color);
+  .title{
+    text-align: center;
+    color: var(--title-color);
+  }
+
+  .Panel{
+    display: block;
+    margin: 5px;
+    color: rgb(50, 43, 35);
+
+    .btnDemoContent, .btnDemoContentOpen, .btnDemoDisabled{
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 5px;
+      display: flex;
+      flex-direction: row; 
+      justify-content: space-around;
+      align-content: center;
+      flex-wrap: nowrap;
+      background-color: var(--background-title-color);
+      align-items: center;
+
+      &:hover{
+        transition: all 0.3s;
+        background-color: rgb(229, 229, 229);
+        .arrowDown{
+          opacity: 1;
+          transition: all 0.3s;
+          margin-top: 14px;
+        }
+        .arrowUp{
+          opacity: 1;
+          transition: all 0.3s;
+          margin-top: -14px;
+        }
+      }
+
+      .title{
+        color: var(--btn-title-color);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      .description{
+        color: var(--btn-description-color);
+        font-size: larger;
+        font-style:italic;
+        max-width: 70%;
+        border-radius: 5px;
+        padding: 5px;
+      }      
+    }
+
+    .btnDemoContentOpen{
+      border-radius: 10px 10px 0 0;
+    }
+
+    .btnDemoDisabled{
+      cursor: no-drop;
+      filter: brightness(50%);
+      // pointer-events: none
+      .arrowDown{
+        display: none;
+      }
+    }
+    
+    .content, .contentDisabled{
+      margin-top: 5px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+      cursor: pointer;
+    }
+    .contentOpen{
+      font-family:'Times New Roman', Times, serif;
+      font-size: larger; 
+      text-indent: 5%;
+      line-height: 1.6;
+      padding-left: 15px;
+      padding-right: 10px;
+      overflow: var(--scrollable);
+      transition: all 0.3s ease-out;
+      border-radius: 0 0 10px 10px;
+      background-image: linear-gradient(1deg, var(--background-color),  var(--background-title-color));
+      max-height: var(--max-height-content);
+      p{
+        cursor:  grab;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--base-color);
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--background-text-color);
+        &:active{
+          cursor: grabbing;
+        }
+      }
+    }
+
+    .arrowDown, .arrowUp{
+      opacity: 0.4;
+      transition: all 0.2s;
+      transform: rotate(-90deg);
+    }
+    .arrowUp{
+      transform: rotate(90deg);
+    }
+  }
+} 
+

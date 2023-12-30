@@ -1,0 +1,99 @@
+@import "../rootStyles.css";
+
+.accordion{
+  width: var(--accordion-width);
+  height: var(--accordion-height);
+  padding: 5px;
+  border: var(--border-style);
+  border-radius: 10px;
+  background-color: var(--background-color);
+  font-size: var(--font-size);
+
+  .title{
+    text-align: center;
+    color: var(--title-color);
+  }
+
+  .PanelOpen, .PanelClose, .PanelDisabled{
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 0;
+    background-color: var(--content-color);
+
+    .btnHeader{
+      cursor: pointer; 
+      padding: 5px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+
+      .btnHeaderText{
+        font-size: larger;
+        width: 90%;
+        display: inline-flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        aside{
+          width: 80%;
+          justify-content: center;
+          display: inline-flex;
+        }
+      }
+
+      .arrowDown, .arrowUp{
+        cursor: pointer;
+        opacity: 0.4;
+        transition: all 0.1s;
+        transform: rotate(-90deg);
+      }
+      .arrowUp{
+        transform: rotate(90deg);
+      }
+
+    }
+
+    .contentInvisible{
+      margin-top: 5px;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    .contentVisible{
+      // height: 100%;
+      padding: 8px;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 1;
+    }
+  }
+
+  .PanelOpen{
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .PanelClose{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    
+    &:hover{
+      filter: brightness(90%);
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .PanelDisabled{
+    cursor:  no-drop;
+    opacity: 0.5; 
+    .arrowDown{
+      display: none;
+    }
+  }
+} 
+
